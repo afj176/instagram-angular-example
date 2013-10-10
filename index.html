@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Instagram example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-mast insta-rainbow">
+
+        <div class="row">
+
+            <div class="col-lg-12 text-center v-center">
+
+                <h1>Instagram Example</h1>
+                <p class="lead">Get instagram items by hashtag</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container" ng-controller="InstagramCtrl">
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>#{{example1.hash}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="instagram-list">
+                            <li class="instagram-item" ng-repeat="i1 in example1.items">
+                                <a ng-href="openInstagram()">
+                                    <img width="80" height="80" ng-src="{{ i1.images.low_resolution.url }}" src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+						<div ng-show="example1.error" class="alert alert-danger">
+						  <strong>Warning!</strong><br/>{{example1.error}}.
+						</div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>#{{example2.hash}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="instagram-list">
+                            <li class="instagram-item" ng-repeat="i2 in example2.items">
+                                <a ng-href="openInstagram()">
+                                    <img width="80" height="80" ng-src="{{ i2.images.low_resolution.url }}" src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+						<div ng-show="example2.error" class="alert alert-danger">
+						  <strong>Warning!</strong><br/>{{example2.error}}.
+						</div>                         
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>#{{example3.hash}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="instagram-list">
+                            <li class="instagram-item" ng-repeat="i3 in example3.items">
+                                <a ng-href="openInstagram()">
+                                    <img width="80" height="80" ng-src="{{ i3.images.low_resolution.url }}" src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+						<div ng-show="example3.error" class="alert alert-danger">
+						  <strong>Warning!</strong><br/>{{example3.error}}.
+						</div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <br>
+                <p class="pull-right"><a href="https://github.com/afj176/Angular-Examples">Angular Examples</a> | Codeti.me</p>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/instagram/factory.js"></script>
+    <script src="js/instagram/controller.js"></script>
+</body>
+
+</html>
