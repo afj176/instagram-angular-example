@@ -35,9 +35,9 @@
                     </div>
                     <div class="panel-body">
                         <ul class="instagram-list">
-                            <li class="instagram-item" ng-repeat="i1 in example1.items">
-                                <a ng-href="openInstagram()">
-                                    <img width="80" height="80" ng-src="{{ i1.images.low_resolution.url }}" src="" alt="">
+                            <li class="instagram-item" ng-repeat="item in example1.items">
+                                <a ng-href="{{item.link}}">
+                                    <img width="80" height="80" ng-src="{{ item.images.low_resolution.url }}" src="" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -54,9 +54,9 @@
                     </div>
                     <div class="panel-body">
                         <ul class="instagram-list">
-                            <li class="instagram-item" ng-repeat="i2 in example2.items">
-                                <a ng-href="openInstagram()">
-                                    <img width="80" height="80" ng-src="{{ i2.images.low_resolution.url }}" src="" alt="">
+                            <li class="instagram-item" ng-repeat="item in example2.items">
+                                <a ng-href="{{item.link}}">
+                                    <img width="80" height="80" ng-src="{{ item.images.low_resolution.url }}" src="" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -73,9 +73,9 @@
                     </div>
                     <div class="panel-body">
                         <ul class="instagram-list">
-                            <li class="instagram-item" ng-repeat="i3 in example3.items">
-                                <a ng-href="openInstagram()">
-                                    <img width="80" height="80" ng-src="{{ i3.images.low_resolution.url }}" src="" alt="">
+                            <li class="instagram-item" ng-repeat="item in example3.items">
+                                <a ng-href="{{item.link}}">
+                                    <img width="80" height="80" ng-src="{{ item.images.low_resolution.url }}" src="" alt="">
                                 </a>
                             </li>
                         </ul>
