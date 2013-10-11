@@ -53,9 +53,6 @@ app.controller('InstagramCtrl', ['$scope', 'Instagram',
 		    	}else{
 		    		$scope.example3.error = "This hashtag has returned no results";	
 		    	}		    	
-		    })
-		    .error(function(response, status, headers, config) {
-		    	$scope.example3.error = 'Something went terrible wrong { '+ angular.toJson(response) + '}';
 		    });
 
   	}
