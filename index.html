@@ -1,58 +1,108 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Instagram-angular-example by afj176</title>
+<!DOCTYPE html>
+<html ng-app="app">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Instagram-angular-example</h1>
-        <p>Get instagram items by hashtag with angular.js</p>
+<head>
+    <title>Instagram example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+</head>
 
-        <p class="view"><a href="https://github.com/afj176/instagram-angular-example">View the Project on GitHub <small>afj176/instagram-angular-example</small></a></p>
+<body>
 
+    <div class="container-mast insta-rainbow">
 
-        <ul>
-          <li><a href="https://github.com/afj176/instagram-angular-example/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/afj176/instagram-angular-example/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/afj176/instagram-angular-example">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="instagram-angular-example" class="anchor" href="#instagram-angular-example"><span class="octicon octicon-link"></span></a>Instagram Angular Example</h1>
+        <div class="row">
 
-<h2>
-<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>about</h2>
+            <div class="col-lg-12 text-center v-center">
 
-<p>Basic example usage of factory method to make a request to the instagram api to get a certian amount of images</p>
+                <h1>Instagram Example</h1>
+                <p class="lead">Get instagram items by hashtag</p>
+            </div>
 
-<h4>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h4>
-
-<p>In <code>js/instagram/factory.js</code> configure your <code>client_id</code></p>
-
-<p>In <code>js/instagram/controller.js</code> change the example <code>hastags</code></p>
-
-<p>****B.Y.O.T (bring your own tests)****</p>
-
-<p>part of <a href="https://github.com/afj176/Angular-Examples">Angular Examples</a></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/afj176">afj176</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+
+    <div class="container" ng-controller="InstagramCtrl">
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>#{{example1.hash}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="instagram-list">
+                            <li class="instagram-item" ng-repeat="item in example1.items">
+                                <a ng-href="{{item.link}}">
+                                    <img width="80" height="80" ng-src="{{ item.images.low_resolution.url }}" src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+						<div ng-show="example1.error" class="alert alert-danger">
+						  <strong>Warning!</strong><br/>{{example1.error}}.
+						</div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>#{{example2.hash}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="instagram-list">
+                            <li class="instagram-item" ng-repeat="item in example2.items">
+                                <a ng-href="{{item.link}}">
+                                    <img width="80" height="80" ng-src="{{ item.images.low_resolution.url }}" src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+						<div ng-show="example2.error" class="alert alert-danger">
+						  <strong>Warning!</strong><br/>{{example2.error}}.
+						</div>                         
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>#{{example3.hash}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="instagram-list">
+                            <li class="instagram-item" ng-repeat="item in example3.items">
+                                <a ng-href="{{item.link}}">
+                                    <img width="80" height="80" ng-src="{{ item.images.low_resolution.url }}" src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+						<div ng-show="example3.error" class="alert alert-danger">
+						  <strong>Warning!</strong><br/>{{example3.error}}.
+						</div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <br>
+                <p class="pull-right"><a href="https://github.com/afj176/instagram-angular-example">Fork</a> | <a href="https://github.com/afj176/Angular-Examples">Angular Examples</a> | Codeti.me</p>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/instagram/factory.js"></script>
+    <script src="js/instagram/controller.js"></script>
+</body>
+
 </html>
