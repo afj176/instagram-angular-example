@@ -15,45 +15,29 @@ app.controller('InstagramCtrl', ['$scope', 'Instagram',
 			hash: 'examples'
 		};
 
-	    Instagram.get(9, $scope.example1.hash)
-		    .success(function(response, status, headers, config) {
-		    	if(response.meta.code !== 200){
-		    		$scope.example1.error = response.meta.error_type + ' | ' + response.meta.error_message;
-		    		return;
-		    	}		    
-		    	if(response.data.length > 0){
-		    		$scope.example1.items = response.data;
-		    	}else{
-		    		$scope.example1.error = "This hashtag has returned no results";	
-		    	}				
-		    });
+		var instagramSuccess = function(scope, res){
+	    	if(res.meta.code !== 200){
+	    		scope.error = res.meta.error_type + ' | ' + res.meta.error_message;
+	    		return;
+	    	}		    
+	    	if(res.data.length > 0){
+	    		scope.items = res.data;
+	    	}else{
+	    		scope.error = "This hashtag has returned no results";	
+	    	}
+		};
 
-	    Instagram.get(9, $scope.example2.hash)
-		    .success(function(response, status, headers, config) {
-		    	console.log('response', response);
-		    	if(response.meta.code !== 200){
-		    		$scope.example2.error = response.meta.error_type + ' | ' + response.meta.error_message;
-		    		return;
-		    	}	
-		    	if(response.data.length > 0){
-		    		$scope.example2.items = response.data;
-		    	}else{
-		    		$scope.example2.error = "This hashtag has returned no results";	
-		    	}
-		    });
+	    Instagram.get(9, $scope.example1.hash).success(function(response) {
+			instagramSuccess($scope.example1, response);
+	    });
 
-	    Instagram.get(9, $scope.example3.hash)
-		    .success(function(response, status, headers, config) {
-		    	if(response.meta.code !== 200){
-		    		$scope.example3.error = response.meta.error_type + ' | ' + response.meta.error_message;
-		    		return;
-		    	}
-		    	if(response.data.length > 0){
-		    		$scope.example3.items = response.data;
-		    	}else{
-		    		$scope.example3.error = "This hashtag has returned no results";	
-		    	}		    	
-		    });
+	    Instagram.get(9, $scope.example2.hash).success(function(response) {
+	    	instagramSuccess($scope.example2, response);
+	    });
+
+	    Instagram.get(9, $scope.example3.hash).success(function(response) {
+	    	instagramSuccess($scope.example3, response);		    	
+	    });
 
   	}
 ]);
