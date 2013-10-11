@@ -7,7 +7,7 @@ app.factory('Instagram', ['$http',
 		var clientId = 'CLIENT_ID_GOES_HERE';
 		return {
 			'get': function(count, hashtag) {
-				var request = "/tags/" + hashtag + "/media/recent";
+				var request = '/tags/' + hashtag + '/media/recent';
 				var url = base + request;
 				var config = {
 					'params': {
